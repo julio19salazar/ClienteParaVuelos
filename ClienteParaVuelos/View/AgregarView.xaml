@@ -1,0 +1,48 @@
+﻿<Window x:Class="ClienteParaVuelos.View.AgregarView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClienteParaVuelos.View"
+        mc:Ignorable="d"
+        Title="AgregarView" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="15,2"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="White"></Setter>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="10,3"/>
+            <Setter Property="Width" Value="300"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+
+        </Style>
+    </Window.Resources>
+    <DockPanel  Background="DimGray">
+        <TextBlock Foreground="Black" Margin="0,0,0,3" DockPanel.Dock="Top" Background="Gold" FontSize="18" FontWeight="Bold"
+                   Padding="10,5" TextAlignment="Center">Registrar nuevo vuelo</TextBlock>
+        <StackPanel DockPanel.Dock="Left" Width="400">
+            <TextBlock>Vuelo:</TextBlock>
+            <TextBox Text="{Binding MiVuelo.vuelo}"></TextBox>
+            <TextBlock>Destino:</TextBlock>
+            <TextBox  Text="{Binding MiVuelo.destino}"></TextBox>
+            <TextBlock>Hora de llegada:</TextBlock>
+            <TextBox  Text="{Binding MiVuelo.hora}"></TextBox>
+            <TextBlock>Estado:</TextBlock>
+            <TextBox  Text="{Binding MiVuelo.estado}"></TextBox>
+           
+            <WrapPanel HorizontalAlignment="Center" Margin="0,7,0,0">
+                <Button Command="{Binding AgregarCommand}" Margin="10,3" Width="150" Padding="10,5"
+                    Background="#4000" Foreground="Yellow">Agregar</Button>
+                <Button IsCancel="True" Margin="10,3" Width="150" Padding="10,5"
+                    Background="#4000" Foreground="SkyBlue">Cancelar</Button>
+
+            </WrapPanel>
+            <TextBlock Text="{Binding Mensaje}" Foreground="Red" FontSize="11" ></TextBlock>
+        </StackPanel>
+        <Image DockPanel.Dock="Right" Source="https://c.tenor.com/yjYo1w_6W-4AAAAM/avion-travel.gif"></Image>
+
+    </DockPanel>
+</Window>
